@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=ConnectVPN
+Comment=Lets hide in Germany
+Path=/usr/sbin
+Exec=/mnt/DATA/Drive/Python/nordVPN_GUI/nordVPN.py
+Icon=/home/mint/Pictures/vpn.png
+Terminal=true
+Categories=Utility;
+Keywords=vpn;
