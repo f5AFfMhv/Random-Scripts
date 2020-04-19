@@ -15,8 +15,8 @@ read DIRECTORY
 cd $DIRECTORY
 clear
 FILES=$(ls $DIRECTORY)
-COUNTRY_CODES=$(cat ~/skriptai/Country_ISO_codes.txt | awk '{print $1}')
-COUNTRIES=$(cat ~/skriptai/Country_ISO_codes.txt | awk '{$1=""; print $0}')
+COUNTRY_CODES=$(cat ~/skriptai/OpenVPN/Country_ISO_codes.txt | awk '{print $1}')
+COUNTRIES=$(cat ~/skriptai/OpenVPN/Country_ISO_codes.txt | awk '{$1=""; print $0}')
 COUNT="1"
 
 # konvertuoti i array
