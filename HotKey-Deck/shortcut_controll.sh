@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Script finds which window is active and executes specific shortcut depending on application
+# Dependencies: xdotool
 
 ACTIVE_WINDOW=$(xdotool getactivewindow getwindowname) # Get active window name
 sleep 0.2 # Delay for more reliable shortcut execution

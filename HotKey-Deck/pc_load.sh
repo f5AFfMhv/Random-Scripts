@@ -2,7 +2,6 @@
 
 # Displays notification with cpu, gpu load information
 
-
 CPU_TEMP=$(sensors | grep Tctl | awk '{print $2}')
 CPU_UTIL=$(mpstat 2 1 | grep Average | awk '$12 ~ /[0-9.]+/ { print 100 - $12"%" }')
 GPU_TEMP=$(nvidia-smi -q -d TEMPERATURE | grep "GPU Current Temp" | awk '{print $5}')

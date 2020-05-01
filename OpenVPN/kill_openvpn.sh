@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#########################################################
-#Redaguota: 2018-07-10									#
-#Paskirtis: Nuzudo visus openvpn procesus				#
-#########################################################
+# Kills all openvpn processes
 
 sudo kill $(ps -ef | grep [o]penvpn | awk -F ' ' '{print $2}')
-

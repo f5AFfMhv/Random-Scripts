@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Moon lamp ON/OFF
+# Moon lamp control
+# https://www.instructables.com/id/IoT-Moon-Lamp/
 
 LAMP_IP="192.168.0.104"
 
