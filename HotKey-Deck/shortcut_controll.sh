@@ -4,7 +4,7 @@
 # Dependencies: xdotool
 
 ACTIVE_WINDOW=$(xdotool getactivewindow getwindowname) # Get active window name
-sleep 0.2 # Delay for more reliable shortcut execution
+sleep 0.3 # Delay for more reliable shortcut execution
 
 # Close active window
 if [ "$1" = "close_all" ]; then
@@ -34,15 +34,27 @@ elif ! [[ -z $(echo $ACTIVE_WINDOW | grep -o -s "Sublime Text") ]]; then
  	fi
 #--------------------------------Chromium-----------------------------------
 elif ! [[ -z $(echo $ACTIVE_WINDOW | grep -o -s "Chromium") ]]; then
- 	if [ "$1" = "plus" ]; then
- 		xdotool key --clearmodifiers ctrl+equal
- 	elif [ "$1" = "minus" ]; then
- 		xdotool key --clearmodifiers ctrl+minus
- 	elif [ "$1" = "tab" ]; then
- 		xdotool key --clearmodifiers ctrl+t
- 	elif [ "$1" = "close" ]; then
- 		xdotool key --clearmodifiers ctrl+w
- 	fi
+	if ! [[ -z $(echo $ACTIVE_WINDOW | grep -o -s "YouTube") ]]; then
+	 	if [ "$1" = "plus" ]; then
+	 		xdotool key --clearmodifiers l 			# forward 10s
+	 	elif [ "$1" = "minus" ]; then
+	 		xdotool key --clearmodifiers j			# reverse 10s
+	 	elif [ "$1" = "tab" ]; then
+	 		xdotool key --clearmodifiers shift+N 	# next video
+	 	elif [ "$1" = "close" ]; then
+	 		xdotool key --clearmodifiers f 			# togle fullscreen
+	 	fi
+	else
+	 	if [ "$1" = "plus" ]; then
+	 		xdotool key --clearmodifiers ctrl+equal
+	 	elif [ "$1" = "minus" ]; then
+	 		xdotool key --clearmodifiers ctrl+minus
+	 	elif [ "$1" = "tab" ]; then
+	 		xdotool key --clearmodifiers ctrl+t
+	 	elif [ "$1" = "close" ]; then
+	 		xdotool key --clearmodifiers ctrl+w
+	 	fi
+	 fi
 #--------------------------------Dolphin-----------------------------------
 elif ! [[ -z $(echo $ACTIVE_WINDOW | grep -o -s "Dolphin") ]]; then
  	if [ "$1" = "plus" ]; then
@@ -50,9 +62,9 @@ elif ! [[ -z $(echo $ACTIVE_WINDOW | grep -o -s "Dolphin") ]]; then
  	elif [ "$1" = "minus" ]; then
  		xdotool key --clearmodifiers ctrl+minus
  	elif [ "$1" = "tab" ]; then
- 		xdotool key --clearmodifiers ctrl+t
+ 		xdotool key --clearmodifiers F3				# Split window
  	elif [ "$1" = "close" ]; then
- 		xdotool key --clearmodifiers ctrl+q
+ 		xdotool key --clearmodifiers ctrl+h 		# Show/hide hidden files
  	fi
 #----------------------------------Pix-------------------------------------
 elif ! [[ -z $(echo $ACTIVE_WINDOW | grep -o -s "Pix") ]]; then
