@@ -13,9 +13,9 @@ else
 		$1 &
 	else
 		# Bring all windows to focus
-		for (( i=0; i<${#ALL_WINDOWS[@]}; i++ )); do	
+		for (( i=0; i<${#ALL_WINDOWS[@]}; i++ )); do
 			xdotool windowactivate --sync ${ALL_WINDOWS[i]}
-		done	
+		done
 	fi
 fi
 

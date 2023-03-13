@@ -1,3 +1,5 @@
+.gitignore
 conky/
 others/
 *.desktop
+OpenVPN/nohup.out

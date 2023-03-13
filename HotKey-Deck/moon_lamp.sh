@@ -3,7 +3,7 @@
 # Moon lamp control
 # https://www.instructables.com/id/IoT-Moon-Lamp/
 
-LAMP_IP="192.168.1.189"
+LAMP_IP="192.168.1.247"
 
 RESPONSE=$(curl -s http://$LAMP_IP/light/5 | grep "ON")
 
