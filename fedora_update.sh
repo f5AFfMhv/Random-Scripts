@@ -5,5 +5,6 @@
 
 dnf update -y
 flatpak update -y
+flatpak uninstall --unused -y
 dracut --regenerate-all -force
 grub2-mkconfig -o /boot/grub2/grub.cfg
