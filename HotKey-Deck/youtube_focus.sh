@@ -2,7 +2,9 @@
 #
 # Author: 			Martynas J. https://github.com/f5AFfMhv
 # Modified:			2023-03-13
-# Description:	Focuses firefox window which has youtube tab opened.
+# Description:		Focuses firefox window which has youtube tab opened.
+#
+# NOTE: Script only works with applications that runs on X11.
 
 # Dependencies
 DEP="wmctrl"
@@ -22,7 +24,7 @@ EOF
 }
 
 # Print help message if any parameter is passed
-if [ $1 ]; then usage; fi
+if [ $1 ]; then usage; exit 0; fi
 
 # Check if dependencies are installed
 for app in $DEP; do
@@ -37,6 +39,8 @@ youtube_win_id=$(wmctrl -li | grep "${YOUTUBE_WIN_NAME}" | awk '{print $1}')
 if [ -z $youtube_win_id ]; then
 		echo "youtube window was not found"
 		exit 1
+else
+	echo "Window ID: $youtube_win_id"
+	# Switch to youtube and execute shortcut
+	wmctrl -ia $youtube_win_id
 fi
-# Switch to youtube and execute shortcut
-wmctrl -ia $youtube_win_id
