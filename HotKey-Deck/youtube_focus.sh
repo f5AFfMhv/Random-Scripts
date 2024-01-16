@@ -1,22 +1,22 @@
 #!/bin/bash
 #
 # Author: 			Martynas J. https://github.com/f5AFfMhv
-# Modified:			2023-03-13
-# Description:		Focuses firefox window which has youtube tab opened.
+# Modified:			2024-01-16
+# Description:		Focuses browser window which has youtube opened.
 #
 # NOTE: Script only works with applications that runs on X11.
 
 # Dependencies
 DEP="wmctrl"
-# Window name containing youtube
-YOUTUBE_WIN_NAME="YouTube — Mozilla Firefox"
+# Window name search keyword
+WIN_NAME="YouTube"
 
 # Function prints script description and usage
 usage() {
 cat<<EOF
 Usage: ./$(basename "${BASH_SOURCE[0]}") [-h]
 Description:
-	Focuses firefox window which has youtube tab opened.
+	Focuses Browser window which has youtube tab opened.
 
 Options:
 	-h, --help		Print this help and exit
@@ -35,9 +35,9 @@ for app in $DEP; do
 done
 
 # Get youtube window id
-youtube_win_id=$(wmctrl -li | grep "${YOUTUBE_WIN_NAME}" | awk '{print $1}')
+youtube_win_id=$(wmctrl -li | grep "${WIN_NAME}" | awk '{print $1}')
 if [ -z $youtube_win_id ]; then
-		echo "youtube window was not found"
+		echo "error: window was not found"
 		exit 1
 else
 	echo "Window ID: $youtube_win_id"
