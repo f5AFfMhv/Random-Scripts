@@ -3,8 +3,11 @@
 # Regenerate initramfs/initrd and grub config.
 # Needed for some sort of bug when after installing new kernel, os doesn't boot
 
-dnf update -y
+sudo dnf update -y
 flatpak update -y
 flatpak uninstall --unused -y
-dracut --regenerate-all -force
-grub2-mkconfig -o /boot/grub2/grub.cfg
+#dracut --regenerate-all -force
+#grub2-mkconfig -o /boot/grub2/grub.cfg
+
+echo ":: Update complete! Press [ENTER] to close."
+read
